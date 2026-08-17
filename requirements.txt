@@ -1,0 +1,24 @@
+# --- Web framework (FastAPI backend) ---
+fastapi>=0.130,<1.0
+uvicorn[standard]>=0.32,<1.0
+pydantic-settings>=2.6,<3.0
+python-multipart>=0.0.9
+
+# --- Core ML / CV ---
+# torch + torchvision are pinned EXACTLY as a matched pair -- a mismatched
+# pair is the most common cause of silent CUDA crashes / import errors.
+# 2.11.0 / 0.26.0 is the verified-compatible pair and matches what Colab's
+# T4 runtime already ships (reported as "2.11.0+cu128" -- the "+cu128" is a
+# local CUDA-build tag, deliberately NOT written here, see note below).
+torch==2.11.0
+torchvision==0.26.0
+numpy
+pillow>=12.0,<13.0
+
+# --- Frontend ---
+streamlit>=1.55,<2.0
+
+# --- Utilities ---
+requests>=2.32,<3.0
+tqdm>=4.66,<5.0
+matplotlib>=3.9,<4.0
