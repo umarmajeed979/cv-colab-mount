@@ -1,7 +1,6 @@
 # Runbook — Semantic Segmentation for Autonomous Driving
 
-Follow these in order. Each step says what it does and what you should
-see if it worked. Commands are PowerShell (matches your `PS E:\...>` prompt).
+Commands are for PowerShell (matches`PS E:\...>` prompt).
 
 ---
 
@@ -20,7 +19,7 @@ install into the exact Python that will run your scripts; bare `pip` can
 silently install into a *different* Python if you have more than one on
 your machine (very common on Windows).
 
-**If you ever copy/rename the project folder** (e.g. `..._new`,
+**If ever copy/rename the project folder** (e.g. `..._new`,
 `...updated version`), re-run `python -m pip install -e . --force-reinstall --no-deps`
 inside the *new* folder. `-e .` records an absolute path to wherever it
 was run — an old install left pointing at a renamed/moved/deleted folder
@@ -52,7 +51,7 @@ exact error if it persists.
 
 ---
 
-## 2. Set up your `.env`
+## 2. Set up `.env`
 
 ```powershell
 copy .env.example .env
@@ -88,7 +87,7 @@ If `git` isn't recognized, install Git for Windows first
 python scripts/prepare_data.py
 ```
 
-**Verify it worked:** it should print something like
+**Verify it worked:** it will print something like
 `train -> train: wrote 367 image/mask pairs to data/processed/train`
 (and the same for `val`/`validation`, `test`). Check:
 ```powershell
@@ -119,7 +118,7 @@ If your machine has too little RAM and it crashes/freezes, that's fine
 
 ## 6. Real training on Google Colab (GPU)
 
-1. Push this project to a GitHub repo (or zip it and upload to Colab
+1. Pushing project to a GitHub repo (or zip it and upload to Colab
    directly / via Google Drive).
 2. Open a new Colab notebook, set **Runtime → Change runtime type → GPU**.
 3. Run:
