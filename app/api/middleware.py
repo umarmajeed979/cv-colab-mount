@@ -1,6 +1,5 @@
 """
 Project-specific middleware (request logging, size limits, etc).
-Keep this thin -- most cross-cutting behaviour belongs in utils/.
 """
 import time
 from fastapi import Request
