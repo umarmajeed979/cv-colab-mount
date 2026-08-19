@@ -18,7 +18,7 @@ python run.py            # backend on :8000
 streamlit run frontend/app.py   # frontend on :8501, separate terminal
 ```
 
-## Dataset — CamVid (free, no registration, plain GitHub files)
+## Dataset  CamVid (plain GitHub files)
 No login, no cert issues, no request forms — the dataset is just PNG files
 in a public repo (`alexgkendall/SegNet-Tutorial`), the standard SegNet
 11-class CamVid split, images already at 480x360 with pixel-value class-id
@@ -30,7 +30,7 @@ git clone --depth 1 https://github.com/alexgkendall/SegNet-Tutorial data/raw/_se
 mv data/raw/_segnet_tmp/CamVid data/raw/CamVid
 rm -rf data/raw/_segnet_tmp
 ```
-This gives you:
+This gives:
 ```
 data/raw/CamVid/{train,val,test}/*.png        # 480x360 RGB images
 data/raw/CamVid/{train,val,test}annot/*.png   # matching single-channel masks, values 0-10 = class id, 11 = void
@@ -82,7 +82,7 @@ Writes `data/models/model_final.torchscript.pt`.
 side by side and the per-class coverage breakdown.
 
 ## What changes per project
-Edit these — this is where a project's actual identity lives:
+i will edit these — this is where a project's actual identity lives:
 - `app/config.py` — PROJECT_NAME, DESCRIPTION, MODEL_PATH, class list, IMG_SIZE
 - `app/core/model.py` — architecture definitions (DeepLabV3 / U-Net)
 - `app/core/predictor.py` — segmentation inference + overlay/coverage building
